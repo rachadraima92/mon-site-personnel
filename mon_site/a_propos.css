@@ -1,0 +1,55 @@
+#a_propos{
+    width: 100%;
+    height: auto;
+    background-color: white;
+    padding: 10px ;
+}
+#a_propos h1{
+    color: black;
+    display: flex;
+    justify-content: center;
+    
+    }
+
+#a_propos .a_propos{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#a_propos .a_propos img{
+    width: 175px;
+}
+#a_propos .a_propos p{
+    color: black;
+    padding: 20px;
+    font-size: 15px;
+}
+
+
+
+    /* Responsive */
+
+@media screen and (max-width: 800px){
+    #a_propos h1{
+        font-size: 15px;
+    }
+
+    #a_propos .a_propos p{
+        font-size: 12px;
+    }
+
+
+    }
+
+@media screen and (max-width: 600px){
+
+    #a_propos .a_propos{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #a_propos .a_propos img{
+        width: 125px;
+    }
+
+    }

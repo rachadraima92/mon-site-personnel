@@ -1,0 +1,165 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    position: fixed ;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 25px;
+    background-color: black;
+    box-shadow: inset 0px -1px 0px #582900;
+    z-index: 1000;
+}
+
+.logo{
+    font-family:'Lobster 1.4', sans-serif ;
+    
+}
+@font-face {
+    font-family: 'Lobster 1.4';
+    src: url(police/Lobster\ 1.4.otf) format('truetype');
+}
+.logo a{
+    text-decoration: none; 
+    color: white;
+    font-size: 20px;
+}
+
+.button-toggler{
+    display: none;
+}
+
+.nav a{
+    margin: 0 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    position: relative;
+    font-family: 'OpenSans-Regular', serif;
+}
+
+
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src: url(police/OpenSans-Regular.ttf) format('truetype');
+}
+.nav a::after{
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -3px; 
+    width: 100%;
+    height: 2px;
+    transform: scale(0);
+    transform-origin: left;
+    background-color: #582900;
+    transition: transform .3s ease-out
+}
+.nav a:hover::after{
+    transform: scale(1);
+}
+
+@media screen and (max-width: 800px){
+     header{
+        padding: 15px;
+        position: relative;
+        position: fixed;
+     }
+     .logo{
+        order: 2;
+     }
+     .navbar{
+        order: 1;
+     } 
+     /* button toggler */
+
+     .button-toggler{
+        width: 20px;
+        height:20px;
+        cursor: pointer;
+        border: none;
+        display: flex;
+        background-color: black;
+        align-items: center;
+        position: relative;
+     }
+
+        .button-toggler span{
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: white;
+            position: absolute;
+            pointer-events: none;
+            transition: opacity .3s .15s ease-out;
+        }
+        .button-toggler span:nth-child(1),
+        .button-toggler span:nth-child(3){
+           transition: transform .3s ease-out;
+        }
+        .button-toggler span:nth-child(1){
+            transform: translateY(7px);
+        }
+        .button-toggler span:nth-child(3){
+            transform: translateY(-7px);
+        }
+        .button-toggler.open span:nth-child(1){
+            transform: translate(0) rotate(135deg);
+        }
+        .button-toggler.open span:nth-child(2){
+            opacity: 0;
+            transition: opacity 0s ease-out;
+        }
+        .button-toggler.open span:nth-child(3){
+            transform: translate(0) rotate(-135deg);
+        }
+
+
+     .nav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        background: rgba(0, 0, 0, 0.5);
+        top: 100%;
+        left: 0;
+        height: auto;
+        border-radius: 5px;
+        padding: 15px 50px 15px 20px;
+        border-right: 1px solid #582900;
+        border-bottom: 1px solid #582900;
+        transform: translate(-100%);
+     }
+     .open{
+        transform: translate(0%);
+     }
+     .nav a{
+        font-size: 18px;
+        margin: 10px 0;
+     }
+
+     .logo a{
+        font-size: 15px;
+    }
+
+
+}
+
+
+@media screen and (max-width: 400px){
+
+    .button-toggler{
+        width: 15px;
+        height:15px;
+
+     }
+
+
+}
